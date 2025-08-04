@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Admin | Tailor Smith</title>
+<link rel="stylesheet" href="admin.css">
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+
+<div id="login-section">
+<h1>🔐 Acceso Administrador</h1>
+<input type="text" id="usuario" placeholder="Usuario">
+<input type="password" id="clave" placeholder="Contraseña">
+<button onclick="login()">Ingresar</button>
+<p id="mensaje-login"></p>
+</div>
+
+<div id="admin-panel" style="display:none;">
+<h1>Gestión de Productos y Videos</h1>
+
+<!-- Subida -->
+<section id="zona-subida"
+        ondrop="manejarDrop(event)"
+        ondragover="event.preventDefault()">
+    <p>Arrastra aquí imágenes o videos, o usa el botón.</p>
+    <input type="file" id="input-archivo" accept="image/*,video/mp4">
+    <button onclick="document.getElementById('input-archivo').click()">Seleccionar Imagen o Video</button>
+    <button onclick="subirArchivo()">Subir Archivo</button>
+</section>
+
+<!-- Lista -->
+<section>
+    <h2>Elementos Cargados</h2>
+    <div id="lista-elementos"></div>
+    <button onclick="guardarCambios()">💾 Guardar Cambios</button>
+</section>
+
+<!-- Botón para salir -->
+<button onclick="salirAdmin()" style="margin-top:20px; background-color:#dc3545; color:white; padding:10px 20px;">
+    🔙 Salir y volver a la tienda
+</button>
+
+<p id="mensaje"></p>
+</div>
+
+<script src="admin.js"></script>
+</body>
+</html>
