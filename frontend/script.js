@@ -1,4 +1,4 @@
-const backendURL = 'http://192.168.1.17:3000';  // Cambia esto por la IP real de tu backend
+const backendURL = '192.168.0.141:3000';  // Cambia esto por la IP real de tu backend
 
 let elementos = [];
 let carrito = [];
